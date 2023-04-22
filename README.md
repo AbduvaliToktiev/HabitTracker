@@ -50,10 +50,35 @@
 - В поле  **`password`** (есть обязательная валидация почты)
 ````
 {
-    "username":"Eкmek",
-    "password":"AdIl1!2@",
-    "email":"ermek@gmail.com",
+    "username":"ermek",
+    "password":"ermek",
+    "email":"springboot1212@gmail.com",
     "age":27,
     "gender":"MALE"
 }
 ````
+
+3. Post запрос **"Сброс пароля"**, заполняется почта пользователя в JSON формате.
+````
+http://localhost:8075/api/v1/auth/reset-password
+````
+````
+{
+    "email":"springboot1212@gmail.com"
+}
+````
+на почту придет jwt-token, он необходим при создание нового пароля.
+
+4. Post запрос **"Изменить пароль"**
+````
+http://localhost:8075/api/v1/auth/change-password
+````
+````
+{
+    "email":"springboot1212@gmail.com",
+    "token":"eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJF0LptZWsiLCJyb2xlcyI6WyJST0xFX1VTRVIiXSwiaWF0IjoxNjgyMTc5Mjk0LCJleHAiOjE2ODIxODI4OTR9.uW5Ktyag87pA7N48aQ5vjugg4H8slTY6sd-AIEX1Dzo",
+    "password":"newpassword",
+    "passwordConfirmation":"newpassword"
+}
+````
+- Заполняем поле почта, токен, и два поля для пароля и отправляем запрос.
