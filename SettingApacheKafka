@@ -1,0 +1,8 @@
+Для запуска и настройки Apache kafka
+1) Установить Apache Kafka version 2.13-3.4.0
+https://kafka.apache.org/downloads
+2) Настроить Apache kafka. Видео с установкой и настройкой
+https://www.youtube.com/watch?v=EUzH9khPYgs&t=185s
+3) Команда для запуска zookeeper: C:\kafka>.\bin\windows\zookeeper-server-start.bat .\config\zookeeper.properties
+Команда для запуска server: C:\kafka>.\bin\windows\kafka-server-start.bat .\config\server.properties
+Команда для создания темы(topic): C:\kafka>.\bin\windows\kafka-console-consumer.bat --bootstrap-server localhost:9092 --topic NewTopic --from-beginning
